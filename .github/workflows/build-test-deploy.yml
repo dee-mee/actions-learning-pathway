@@ -4,7 +4,7 @@ on: push
 
 jobs: 
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps: 
       - name: checkout repo
@@ -19,7 +19,7 @@ jobs:
   test: 
     needs: build
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps: 
       - name: checkout repo
@@ -43,7 +43,7 @@ jobs:
       name: production
       url: ${{ steps.deployment.outputs.page_url }}
     
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     
     steps:
       - name: checkout repo
